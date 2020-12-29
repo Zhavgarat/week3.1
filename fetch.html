@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>JavaScript</title><meta charset="utf-8">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ </head>
+ <body>
+
+   <input type="input" class="form-control" placeholder="Type URL" id="inp" style="width: 400px"/>
+   <button id="bt" class="btn btn-primary">Click!</button>
+   <script>{ console.clear();
+            
+      const btn = document.getElementById('bt');
+      
+      btn.addEventListener('click', async () => {
+        console.log("click");
+        let inp = document.getElementById('inp');
+        let url = inp.value;
+        let response = await fetch(url);
+        let text = await response.text();
+		    inp.value = text;
+      });
+  
+    }</script>
+ </body>
+</html>
